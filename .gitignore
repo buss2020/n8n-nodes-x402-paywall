@@ -9,3 +9,7 @@ dist/
 .idea/
 coverage/
 .turbo/
+
+# Internal working memory — not for public repo
+CLAUDE.md
+.claude/
