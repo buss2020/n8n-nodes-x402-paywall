@@ -1,0 +1,13 @@
+{
+	"node": "n8n-nodes-base.x402Paywall",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Trigger"],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/buss2020/n8n-nodes-x402-paywall"
+			}
+		]
+	}
+}
