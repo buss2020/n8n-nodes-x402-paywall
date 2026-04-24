@@ -31,6 +31,12 @@
 
 **Visual:** User screencast from Task 13.5 (`assets/screencaps/circle-console-tx.mov`)
 
+**Tx hash captured during recording:** `0xf170ead5f2ec7592c92268a119e049d649fd69120076569e41b624dfa084623e`
+**Arc Explorer URL:** https://testnet.arcscan.app/tx/0xf170ead5f2ec7592c92268a119e049d649fd69120076569e41b624dfa084623e
+**From:** `0x83830afA8726721Db6A38Ed47B0935e30D926E06` (Circle Faucet operator wallet)
+**To:** `0x8F79711f72D92C642D28bA776C8C1F3302a529D4` (our merchant wallet)
+**Value:** 20 USDC | **Block:** 38783147 | **Status:** confirmed onchain
+
 **Voiceover:**
 
 > "First, the Circle infrastructure itself. I've provisioned a

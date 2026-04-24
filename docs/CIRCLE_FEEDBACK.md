@@ -30,7 +30,7 @@ We did **not** use Circle's hosted Nanopayments facilitator endpoint, because no
 
 **x402 v2 over a bespoke protocol.** `@x402/core` and `@x402/evm` at `2.10.0` ship typed `PaymentPayload`, `PaymentRequirements`, and the canonical `/verify` + `/settle` wire shapes, so the n8n node and the facilitator share a type contract (see `docs/research/2026-04-24-x402-arc-findings.md` section 4). The v2 CAIP-2 network identifier (`eip155:5042002`) let us target Arc without anyone's network-name enum being updated, which was decisive on a two-day deadline.
 
-**Circle Developer Console** was added after the first successful settlement (tx `0xc67c4fe4baac112e3ea03b4166539e08d1fa8911d7ba1ea4d4257d850adb168a`) to produce the screencast that satisfies the submission-video requirement to show a transaction through the Console plus verification on Arcscan.
+**Circle Developer Console** was added after the first successful paywall settlement (tx `0xc67c4fe4baac112e3ea03b4166539e08d1fa8911d7ba1ea4d4257d850adb168a`) to satisfy the submission-video requirement of a transaction executed through the Console plus verification on Arcscan. We used the Arc-testnet Faucet in the Console, which initiates a real USDC transfer from `0x83830afA8726721Db6A38Ed47B0935e30D926E06` (Circle-operated) to our merchant wallet; submission-video tx hash `0xf170ead5f2ec7592c92268a119e049d649fd69120076569e41b624dfa084623e` (block 38783147, confirmed).
 
 ## 3. What worked well
 
