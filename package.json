@@ -1,19 +1,27 @@
 {
-	"name": "n8n-nodes-<...>",
+	"name": "n8n-nodes-x402-paywall",
 	"version": "0.1.0",
-	"description": "",
+	"description": "n8n community node that turns any workflow into a pay-per-call paid endpoint via x402 + USDC on Arc.",
 	"license": "MIT",
-	"homepage": "",
+	"homepage": "https://github.com/buss2020/n8n-nodes-x402-paywall",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"x402",
+		"usdc",
+		"arc",
+		"circle",
+		"paywall",
+		"micropayments",
+		"nanopayments",
+		"agentic-commerce"
 	],
 	"author": {
-		"name": "",
-		"email": ""
+		"name": "Nikolay Micheev",
+		"email": "nikolaimicheev@icloud.com"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/<...>/n8n-nodes-<...>.git"
+		"url": "git+https://github.com/buss2020/n8n-nodes-x402-paywall.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -22,7 +30,10 @@
 		"lint": "n8n-node lint",
 		"lint:fix": "n8n-node lint --fix",
 		"release": "n8n-node release",
-		"prepublishOnly": "n8n-node prerelease"
+		"prepublishOnly": "n8n-node prerelease",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"burst": "tsx scripts/burst.ts"
 	},
 	"files": [
 		"dist"
@@ -31,20 +42,23 @@
 		"n8nNodesApiVersion": 1,
 		"strict": true,
 		"credentials": [
-			"dist/credentials/GithubIssuesApi.credentials.js",
-			"dist/credentials/GithubIssuesOAuth2Api.credentials.js"
+			"dist/credentials/X402PaywallApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/GithubIssues/GithubIssues.node.js",
-			"dist/nodes/Example/Example.node.js"
+			"dist/nodes/X402Paywall/X402Paywall.node.js"
 		]
 	},
 	"devDependencies": {
 		"@n8n/node-cli": "*",
+		"@types/node": "^20.0.0",
 		"eslint": "9.39.4",
+		"msw": "^2.2.0",
 		"prettier": "3.8.3",
 		"release-it": "19.2.4",
-		"typescript": "5.9.3"
+		"tsx": "^4.16.0",
+		"typescript": "5.9.3",
+		"viem": "^2.21.0",
+		"vitest": "^1.6.0"
 	},
 	"peerDependencies": {
 		"n8n-workflow": "*"
