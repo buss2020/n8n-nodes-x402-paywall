@@ -20,7 +20,7 @@ import { X402TimeoutError } from './types';
  *
  * Webhook flow:
  * 1. Client requests the webhook URL without X-PAYMENT header
- *    → node responds 402 + X-PAYMENT-REQUIRED base64 body.
+ *    → node responds 402 + PAYMENT-REQUIRED base64 body.
  *    Workflow is NOT triggered.
  * 2. Client decodes the 402, signs a paymentPayload (EIP-3009
  *    TransferWithAuthorization for x402 "exact" scheme), retries
@@ -31,7 +31,7 @@ import { X402TimeoutError } from './types';
  *    responds 502 (network/timeout) or 402 (invalid). If succeeds,
  *    triggers downstream workflow with payment metadata; the
  *    workflow's final node output is returned to the client with
- *    X-PAYMENT-RESPONSE header.
+ *    PAYMENT-RESPONSE header.
  */
 export class X402Paywall implements INodeType {
 	description: INodeTypeDescription = {
@@ -195,15 +195,15 @@ export class X402Paywall implements INodeType {
 		const paymentRequirements = prBody.accepts[0];
 
 		const signatureHeader =
-			(req.headers['x-payment'] as string | undefined) ??
-			(req.headers['X-PAYMENT'] as string | undefined);
+			(req.headers['payment-signature'] as string | undefined) ??
+			(req.headers['PAYMENT-SIGNATURE'] as string | undefined);
 
 		// ---- 1. No signature — respond 402 and stop.
 		if (!signatureHeader) {
 			logger.info(`${logPrefix} 402 issued path=${req.originalUrl} reason=no_signature`);
 			res
 				.status(402)
-				.setHeader('X-PAYMENT-REQUIRED', encodePaymentRequiredHeader(prBody))
+				.setHeader('PAYMENT-REQUIRED', encodePaymentRequiredHeader(prBody))
 				.setHeader('Content-Type', 'application/json')
 				.json(prBody);
 			return { noWebhookResponse: true };
@@ -215,7 +215,7 @@ export class X402Paywall implements INodeType {
 			paymentPayload = decodePaymentSignatureHeader(signatureHeader);
 		} catch (err) {
 			logger.warn(`${logPrefix} 400 malformed signature err=${(err as Error).message}`);
-			res.status(400).json({ error: 'malformed X-PAYMENT header' });
+			res.status(400).json({ error: 'malformed PAYMENT-SIGNATURE header' });
 			return { noWebhookResponse: true };
 		}
 
@@ -237,7 +237,7 @@ export class X402Paywall implements INodeType {
 				const rejectedBody = { ...prBody, error: errMsg };
 				res
 					.status(402)
-					.setHeader('X-PAYMENT-REQUIRED', encodePaymentRequiredHeader(rejectedBody))
+					.setHeader('PAYMENT-REQUIRED', encodePaymentRequiredHeader(rejectedBody))
 					.setHeader('Content-Type', 'application/json')
 					.json(rejectedBody);
 				return { noWebhookResponse: true };
@@ -303,7 +303,7 @@ export class X402Paywall implements INodeType {
 			}
 		}
 
-		// ---- 5. Write X-PAYMENT-RESPONSE header.
+		// ---- 5. Write PAYMENT-RESPONSE header.
 		const paymentResponsePayload = Buffer.from(
 			JSON.stringify({
 				success: true,
@@ -315,7 +315,7 @@ export class X402Paywall implements INodeType {
 			}),
 			'utf-8',
 		).toString('base64');
-		res.setHeader('X-PAYMENT-RESPONSE', paymentResponsePayload);
+		res.setHeader('PAYMENT-RESPONSE', paymentResponsePayload);
 
 		// ---- 6. Trigger workflow with payment metadata merged in.
 		const output: IDataObject = {
