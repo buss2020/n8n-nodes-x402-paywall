@@ -73,21 +73,21 @@ One HTTP round-trip. One on-chain settlement. One workflow execution.
 
 ## Live in Action
 
-*(Placeholder — screenshots to be dropped here for final submission build)*
+![w:560](../assets/screenshots/arc-explorer-txs.png) ![w:560](../assets/screenshots/arc-explorer-transfers.png)
 
-1. n8n UI — Paywall Trigger node configured
-2. curl 402 response with accepts array
-3. Arc explorer — tx confirmed, $0.005 USDC
-4. Circle Developer Console — settlement log
+**Left:** 50+ `transferWithAuthorization` calls on Arc, method `Circle`, contract `NativeFiatTokenV2_2`.
+**Right:** Every USDC transfer at exactly `0.005` — our configured price.
 
 ---
 
 ## 50 Real Transactions on Arc
 
-- **Evidence**: `assets/burst-50-evidence.json` — 50 txHashes, Arc testnet
-- **Average settle latency**: sub-second per tx
-- **Gas paid by creator**: **$0.00** (facilitator-absorbed)
-- Every tx verifiable on Arc Block Explorer
+![w:700](../assets/screenshots/arc-explorer-address.png)
+
+- **50 of 50** settled — `assets/burst-50-evidence.json`
+- **Avg end-to-end 4750 ms** (probe + EIP-3009 sign + /verify + /settle + Arc confirmation)
+- **Gas paid by the merchant: $0.00** — facilitator absorbs it
+- Every tx resolvable at `testnet.arcscan.app/tx/<hash>` (see `assets/arc-explorer-links.md`)
 
 ---
 
