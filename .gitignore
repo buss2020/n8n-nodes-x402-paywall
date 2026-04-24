@@ -13,3 +13,7 @@ coverage/
 # Internal working memory — not for public repo
 CLAUDE.md
 .claude/
+
+# Asset binaries (large video/screencasts)
+assets/screencaps/*.mov
+assets/demo-video.mp4
