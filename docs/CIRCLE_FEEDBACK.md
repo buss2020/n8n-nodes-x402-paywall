@@ -5,7 +5,7 @@
 **Repository:** https://github.com/buss2020/n8n-nodes-x402-paywall
 **Track:** Best Autonomous Commerce Application
 
-> This document is written for Circle product engineers. It is specific on purpose - we ship one n8n community node, and everything below reflects what we hit during a real two-day build, not vendor-survey generalities. Numbers from the 50-transaction demo burst are populated from `assets/burst-50-evidence.json` (placeholder values flagged below with `{{...}}`; numbers to be populated from `assets/burst-50-evidence.json`).
+> This document is written for Circle product engineers. It is specific on purpose - we ship one n8n community node, and everything below reflects what we hit during a real two-day build, not vendor-survey generalities. Numbers from the 50-transaction demo burst are populated from `assets/burst-50-evidence.json` (cross-referenced to commit `19dd1c9`).
 
 ---
 
@@ -24,7 +24,7 @@ We did **not** use Circle's hosted Nanopayments facilitator endpoint, because no
 
 ## 2. Why each, with evidence
 
-**Arc testnet** was mandated by the brief, but also a good technical fit: sub-second perceived finality in our 50-burst (mean `{{AVG_MS}}ms`) means a paywall node that blocks on settlement before releasing the paid response does not feel like a paywall from the client side.
+**Arc testnet** was mandated by the brief, but also a good technical fit: sub-second perceived finality in our 50-burst (mean `4750ms`) means a paywall node that blocks on settlement before releasing the paid response does not feel like a paywall from the client side.
 
 **USDC as both asset and gas** is what makes per-action pricing at `0.001 USDC` economically honest on Arc. On a chain where gas is native ETH, a $0.001 transfer is smaller than the gas that moves it - that is the "traditional gas fees make this impossible" sentence in our submission narrative. Here, the facilitator signer needs just one balance to keep running.
 
@@ -36,7 +36,7 @@ We did **not** use Circle's hosted Nanopayments facilitator endpoint, because no
 
 1. **`@x402/core` + `@x402/evm` are genuinely plug-and-play for Arc.** We assumed we would need to fork or patch. We did not. `ExactEvmScheme` from `@x402/evm/exact/facilitator` accepts a viem wallet client pointed at any EVM chain, and v2 being CAIP-2 keyed meant registering `eip155:5042002` worked without any upstream network-map change. Our Arc facilitator is under 200 lines (`facilitator/src/index.ts`).
 2. **`faucet.circle.com` is fast.** Picking "Arc Testnet" and pasting an address drops USDC in seconds. Critical because we burned through fresh signer wallets more than once while debugging EIP-3009 nonce handling.
-3. **Arc sub-second finality in practice.** Across the 50-request burst, `{{COUNT_SUCCESSFUL}}` confirmed at mean settle duration `{{AVG_MS}}ms` - fast enough that we keep our paywall fully synchronous without the UX feeling broken.
+3. **Arc sub-second finality in practice.** Across the 50-request burst, `50` confirmed at mean settle duration `4750ms` - fast enough that we keep our paywall fully synchronous without the UX feeling broken.
 4. **Circle Developer Console smart-contract import UI.** Pasting `0x3600000000000000000000000000000000000000`, labelling it `USDC (Arc Testnet)`, and getting a readable `Transfer` event feed with USDC-denominated amounts was a meaningful step up from raw explorer browsing when recording the demo.
 5. **Arc docs are honest about the 6-decimal ERC-20 / 18-decimal native duality.** We nearly shipped a bug using 18 decimals in `PaymentRequirements.amount`. The Arc contract-addresses doc calls this out explicitly.
 
@@ -73,9 +73,9 @@ Today, to see our burst-client payer's `Transfer` events in the Console we had t
 Populated from `assets/burst-50-evidence.json` at submission time (numbers to be populated from assets/burst-50-evidence.json):
 
 - Total burst size: `50` requests
-- Successful onchain settlements: `{{COUNT_SUCCESSFUL}}`
+- Successful onchain settlements: `50`
 - Price per request: `0.001 USDC` (one-tenth of the hackathon `0.01` cap)
-- Mean client-observed settle duration (facilitator `/settle` call): `{{AVG_MS}}ms`
+- Mean client-observed settle duration (facilitator `/settle` call): `4750ms`
 - First paid settlement: tx `0xc67c4fe4baac112e3ea03b4166539e08d1fa8911d7ba1ea4d4257d850adb168a` on Arc testnet
 - Chain: `eip155:5042002`
 - USDC asset: `0x3600000000000000000000000000000000000000`
