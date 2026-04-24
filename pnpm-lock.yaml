@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@x402/core':
+        specifier: ^2.10.0
+        version: 2.10.0
+      '@x402/evm':
+        specifier: ^2.10.0
+        version: 2.10.0(typescript@5.9.3)
       n8n-workflow:
         specifier: '*'
         version: 2.16.0
@@ -1666,6 +1672,12 @@ packages:
 
   '@vitest/utils@1.6.1':
     resolution: {integrity: sha512-jOrrUvXM4Av9ZWiG1EajNto0u96kWAhJ1LmPmJhXXQx/32MecEKd10pOLYgS2BQx1TgkGhloPU1ArDW2vvaY6g==}
+
+  '@x402/core@2.10.0':
+    resolution: {integrity: sha512-n9Exnt1HN4LFaINaPYhk6Cy3ICBt0e46XN1Uo5i6efIZfIoqP6pY8ONSX/M9bU4F1fpvMj0JZ3xdcBZCiGInfw==}
+
+  '@x402/evm@2.10.0':
+    resolution: {integrity: sha512-iEGIgW5K3qM3d2S1wuBSGJ1Kfdctd+0LAN8l+33dbYZgdkvCvTDwBPjbojVJ9mXI0Zk2bt4hUpcoOgsdmr79BA==}
 
   abitype@1.2.3:
     resolution: {integrity: sha512-Ofer5QUnuUdTFsBRwARMoWKOH1ND5ehwYhJ3OJ/BQO+StkwQjHw0XyVh4vDttzHB7QOFhPHa/o413PJ82gU/Tg==}
@@ -5502,6 +5514,20 @@ snapshots:
       loupe: 2.3.7
       pretty-format: 29.7.0
 
+  '@x402/core@2.10.0':
+    dependencies:
+      zod: 3.25.67
+
+  '@x402/evm@2.10.0(typescript@5.9.3)':
+    dependencies:
+      '@x402/core': 2.10.0
+      viem: 2.48.4(typescript@5.9.3)(zod@3.25.67)
+      zod: 3.25.67
+    transitivePeerDependencies:
+      - bufferutil
+      - typescript
+      - utf-8-validate
+
   abitype@1.2.3(typescript@5.9.3)(zod@3.25.67):
     optionalDependencies:
       typescript: 5.9.3
@@ -6368,7 +6394,7 @@ snapshots:
       jsonwebtoken: 9.0.3
       load-esm: 1.0.3
       mime-types: 2.1.35
-      retry-axios: 2.6.0(axios@1.15.0(debug@4.4.3))
+      retry-axios: 2.6.0(axios@1.15.0)
       tough-cookie: 4.1.4
     transitivePeerDependencies:
       - supports-color
@@ -7176,7 +7202,7 @@ snapshots:
       onetime: 7.0.0
       signal-exit: 4.1.0
 
-  retry-axios@2.6.0(axios@1.15.0(debug@4.4.3)):
+  retry-axios@2.6.0(axios@1.15.0):
     dependencies:
       axios: 1.15.0(debug@4.4.3)
 

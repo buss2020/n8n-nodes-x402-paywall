@@ -1,4 +1,10 @@
-/** Serialized shape of the `PAYMENT-REQUIRED` header after base64 decode. */
+/**
+ * Types for the x402 paywall trigger node. Field names mirror the
+ * upstream @x402/core@2.10.0 wire format (verified via docs/research/
+ * 2026-04-24-x402-arc-findings.md).
+ */
+
+/** Body we serialize for 402 responses (sent as JSON body AND as `X-PAYMENT-REQUIRED` base64 header). */
 export interface PaymentRequiredBody {
 	x402Version: 2;
 	error: string;
@@ -12,9 +18,9 @@ export interface PaymentRequiredBody {
 
 export interface PaymentRequirementsEntry {
 	scheme: 'exact';
-	network: string; // "eip155:<chainId>"
+	network: string; // CAIP-2 "eip155:<chainId>"
 	amount: string; // base units as string (e.g. "5000" = $0.005 USDC)
-	asset: string; // USDC contract 0x...
+	asset: string; // USDC ERC-20 contract
 	payTo: string; // recipient 0x...
 	maxTimeoutSeconds: number;
 	extra: {
@@ -26,32 +32,44 @@ export interface PaymentRequirementsEntry {
 
 /** Output emitted to downstream workflow on successful settlement. */
 export interface SettlementOutput {
-	txHash: string;
+	/** onchain tx hash */
+	transaction: string;
+	/** payer EVM address */
 	payer: string;
+	/** settled amount in base units (string) */
 	amount: string;
+	/** the originally-requested USD amount for readability */
 	amountUsd: string;
+	/** CAIP-2 network id */
 	network: string;
+	/** USDC contract */
 	asset: string;
-	settledAt: string; // ISO-8601
+	/** ISO-8601 timestamp (server-local) */
+	settledAt: string;
+	/** facilitator URL that settled the payment */
 	facilitator: string;
 }
 
-/** Minimal shape of a facilitator /verify response (based on x402 spec). */
+/** POST /verify response from the facilitator. Matches @x402/core/types VerifyResponse. */
 export interface FacilitatorVerifyResponse {
-	valid: boolean;
-	reason?: string;
+	isValid: boolean;
+	invalidReason?: string;
+	invalidMessage?: string;
 	payer?: string;
-	amount?: string;
+	extensions?: Record<string, unknown>;
 }
 
-/** Minimal shape of a facilitator /settle response. */
+/** POST /settle response from the facilitator. Matches @x402/core/types SettleResponse. */
 export interface FacilitatorSettleResponse {
 	success: boolean;
-	txHash?: string;
+	/** tx hash (always present on success; possibly absent on failure) */
+	transaction?: string;
+	network?: string;
 	payer?: string;
 	amount?: string;
-	settledAt?: string;
-	reason?: string;
+	errorReason?: string;
+	errorMessage?: string;
+	extensions?: Record<string, unknown>;
 }
 
 export class X402TimeoutError extends Error {
