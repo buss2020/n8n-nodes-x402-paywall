@@ -1,0 +1,25 @@
+{
+  "name": "x402-arc-facilitator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-hosted x402 facilitator for Arc testnet (USDC @ eip155:5042002). Hackathon companion to n8n-nodes-x402-paywall.",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@x402/core": "^2.10.0",
+    "@x402/evm": "^2.10.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.16.0",
+    "typescript": "5.9.3"
+  }
+}
