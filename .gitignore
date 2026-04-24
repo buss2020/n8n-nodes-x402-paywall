@@ -17,3 +17,6 @@ CLAUDE.md
 # Asset binaries (large video/screencasts)
 assets/screencaps/*.mov
 assets/demo-video.mp4
+
+# Playwright MCP debug output
+.playwright-mcp/
