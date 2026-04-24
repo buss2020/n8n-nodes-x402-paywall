@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F0F14"/>
+      <stop offset="1" stop-color="#15121F"/>
+    </linearGradient>
+    <style>
+      .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
+      .mono{font-family:ui-monospace,Menlo,Monaco,"SF Mono",Consolas,monospace;}
+    </style>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+
+  <text x="1600" y="1020" class="sans" font-size="720" font-weight="900"
+        fill="#8B5CF6" fill-opacity="0.08" text-anchor="middle">402</text>
+
+  <text x="100" y="110" class="sans" font-size="22" font-weight="600"
+        fill="#A78BFA" letter-spacing="6">AGENTIC ECONOMY ON ARC — APRIL 2026</text>
+
+  <line x1="100" y1="150" x2="400" y2="150" stroke="#8B5CF6" stroke-width="2"/>
+
+  <text x="100" y="470" class="sans" font-size="140" font-weight="800" fill="#FAFAFA">n8n × x402</text>
+  <text x="100" y="610" class="sans" font-size="140" font-weight="800" fill="#FAFAFA">Paywall</text>
+
+  <text x="100" y="700" class="sans" font-size="48" font-weight="400" fill="#9CA3AF">
+    One node. Paid workflows. Zero gas.
+  </text>
+
+  <text x="100" y="760" class="sans" font-size="32" font-weight="500" fill="#8B5CF6">
+    USDC on Arc. Sub-second. Per-request.
+  </text>
+
+  <line x1="100" y1="860" x2="1820" y2="860" stroke="#8B5CF6" stroke-width="1" stroke-opacity="0.5"/>
+
+  <text x="1820" y="1020" class="mono" font-size="26" font-weight="400"
+        fill="#9CA3AF" text-anchor="end">github.com/buss2020/n8n-nodes-x402-paywall</text>
+</svg>
