@@ -1,0 +1,61 @@
+# 50-tx Burst — Arc Testnet Block Explorer Links
+
+**Burst ran:** 2026-04-24T10:48:52.025Z
+**Target:** https://2.26.21.34/webhook/x402-demo
+**Wallet (signer):** 0x8F79711f72D92C642D28bA776C8C1F3302a529D4
+**Result:** 50/50 successful, avg duration 4750ms
+
+Every transaction below is a real EIP-3009 TransferWithAuthorization on Arc Testnet (chain 5042002), settled via our self-hosted facilitator. Click any link to verify on Arcscan.
+
+| # | Tx hash | Explorer | Duration (ms) |
+|---|---------|----------|---------------|
+| 1 | `0x59c7202d937b…` | [view](https://testnet.arcscan.app/tx/0x59c7202d937be55c6260c2ea45990d823503f119f92b8f9c6ae985f2f3e134f1) | 5113 |
+| 2 | `0x9d926b0ad1ae…` | [view](https://testnet.arcscan.app/tx/0x9d926b0ad1aeb438eb6c3ae38e43d8ac53c42798fe2a8c09af8f1e046bac5e80) | 4694 |
+| 3 | `0x0c35ac917c8b…` | [view](https://testnet.arcscan.app/tx/0x0c35ac917c8ba30ab3e2e95944626b5bb1f5fa6e2d15e5d671a7f05993c87efe) | 4739 |
+| 4 | `0xf8a2be5df2e3…` | [view](https://testnet.arcscan.app/tx/0xf8a2be5df2e34849d573782e5e56455c18b3c5b8b757f12fe5d78181c0104650) | 4657 |
+| 5 | `0xc00a827fc81d…` | [view](https://testnet.arcscan.app/tx/0xc00a827fc81d8ff07591150bcefb3f46c120061833559d1a37d85775241682c1) | 4710 |
+| 6 | `0xf94b4caefd8b…` | [view](https://testnet.arcscan.app/tx/0xf94b4caefd8b21373ebc06feb0f10e18d1a8078fe46c1f59bb1cfe939e180b0f) | 4682 |
+| 7 | `0x673387982806…` | [view](https://testnet.arcscan.app/tx/0x673387982806f9b0702a4a6d03d722b7eb50374688284280896c96224707e526) | 4658 |
+| 8 | `0x07b614f0f396…` | [view](https://testnet.arcscan.app/tx/0x07b614f0f396f14118a491289c879217d6c7c85999cb73f70236674bbb8cf26c) | 4658 |
+| 9 | `0xdf1a37321be0…` | [view](https://testnet.arcscan.app/tx/0xdf1a37321be0702129a2a52a5acfad9199b341721aaa449cd1eff995f00538a8) | 4601 |
+| 10 | `0x5a6995ee3726…` | [view](https://testnet.arcscan.app/tx/0x5a6995ee3726cc6c1b57b8e2279dc05706bb0e99ae27a8d3fd43ff568174abc4) | 4610 |
+| 11 | `0xc78ca800c8f0…` | [view](https://testnet.arcscan.app/tx/0xc78ca800c8f021f2d3bfe1be5ca13b0661b50c3bd210dc58eeff7122c36749eb) | 4596 |
+| 12 | `0xcfa609f34846…` | [view](https://testnet.arcscan.app/tx/0xcfa609f3484621b3b825bc5c0177ef085320f8ef918d54b118fc9b5e91561174) | 4617 |
+| 13 | `0x9b3b901bcb86…` | [view](https://testnet.arcscan.app/tx/0x9b3b901bcb86871c519a24d9e46f2d2628d80eb5fc489d55d850fa5dddbc8cc9) | 4583 |
+| 14 | `0x43533f302569…` | [view](https://testnet.arcscan.app/tx/0x43533f302569bb6e8f2754caac98b2b6998c46260cc085422915567ed6e6050b) | 4837 |
+| 15 | `0xb9838a936f57…` | [view](https://testnet.arcscan.app/tx/0xb9838a936f5771d60d401cfb7687e3b0c2c2f052b8c35fe8a1dd9b5a26bdc9b4) | 4690 |
+| 16 | `0xa8127bc7b222…` | [view](https://testnet.arcscan.app/tx/0xa8127bc7b222e79c8d404e59c930116bfb28712e7d1f85dd7bb4e2d69fb7cb82) | 4700 |
+| 17 | `0x939c4e581c16…` | [view](https://testnet.arcscan.app/tx/0x939c4e581c167c36e4cf87c539c24a22ade6501df72204c2ccd7bfa81f360390) | 6631 |
+| 18 | `0x0e181c8f025f…` | [view](https://testnet.arcscan.app/tx/0x0e181c8f025f3c53dbd1aa84481bfe21d67b8f37fa0bdb9b36637d7da7ff1128) | 4790 |
+| 19 | `0xcae76cc3ba3b…` | [view](https://testnet.arcscan.app/tx/0xcae76cc3ba3b87464fe236606b9bce81009c09528b78dab2853cfc2476abf7e2) | 4719 |
+| 20 | `0x9f241857327d…` | [view](https://testnet.arcscan.app/tx/0x9f241857327d987556f086be767104caf3535a9582a6425e208c248c9958fa3c) | 4619 |
+| 21 | `0xd1f82aa1dab5…` | [view](https://testnet.arcscan.app/tx/0xd1f82aa1dab577a54357f28f69f3dc976db246f3847b51bad57034abc5ebb4da) | 4690 |
+| 22 | `0x3b4848ca7c67…` | [view](https://testnet.arcscan.app/tx/0x3b4848ca7c6768185797b617f8159c8f7df47f966f9e6cb781cdcb857cbebba5) | 4665 |
+| 23 | `0xc837ea6aa8ce…` | [view](https://testnet.arcscan.app/tx/0xc837ea6aa8ce7eaec483139c895c3c8aa581de57ee487c570509db45aee4daa0) | 4723 |
+| 24 | `0x0ddf3d714002…` | [view](https://testnet.arcscan.app/tx/0x0ddf3d714002e9a57c9981d3e3e44251f9c5459e78c38cd4bfb43d9227454882) | 4771 |
+| 25 | `0x835b60e96583…` | [view](https://testnet.arcscan.app/tx/0x835b60e96583048f5d6d362ca385e0d8a715c6608aff05ecf5bd7555a723e9f8) | 4697 |
+| 26 | `0xf6c3bf69aa22…` | [view](https://testnet.arcscan.app/tx/0xf6c3bf69aa2271e2fc545ab0a95634d10d755a70bb1c54fa9f267693c16c0b5c) | 4595 |
+| 27 | `0x2efcd089a6fc…` | [view](https://testnet.arcscan.app/tx/0x2efcd089a6fc6d4b0c1a18da606a782f62ada956ef0b86cb70c00be53224f7a4) | 4920 |
+| 28 | `0x6c6ee9ad47ed…` | [view](https://testnet.arcscan.app/tx/0x6c6ee9ad47ed0a9045041098f21f804161818cf0fbab06aacfd0e644355455aa) | 4752 |
+| 29 | `0x7df577e7ae14…` | [view](https://testnet.arcscan.app/tx/0x7df577e7ae14ef86dc984d2ce57a7ea8ce9877c3038001c7a11729403553b181) | 4577 |
+| 30 | `0x59997d04fb92…` | [view](https://testnet.arcscan.app/tx/0x59997d04fb929145df107be1b9f23c739a0ba6b71a19f353afd316994822fc06) | 4645 |
+| 31 | `0xad23fd04d2b0…` | [view](https://testnet.arcscan.app/tx/0xad23fd04d2b036bcb2af8da1cf3a3984d9344a059cccaaa4e966ac92ca9b0f1c) | 4582 |
+| 32 | `0xcfe9052dcf36…` | [view](https://testnet.arcscan.app/tx/0xcfe9052dcf36785eefbcc836b8bbe6e0c202b4f79be1b1fb88c1f5f7af6fd421) | 4617 |
+| 33 | `0x1143a9b8ce3f…` | [view](https://testnet.arcscan.app/tx/0x1143a9b8ce3f9f4ec2e153370932502f39bdaae8dc09d3d36bb665d4088ea545) | 4589 |
+| 34 | `0xaba9c61b9baa…` | [view](https://testnet.arcscan.app/tx/0xaba9c61b9baafad13dd8f2e4eb43a5f62defe56f43aeecf840cb762cd613aeee) | 4655 |
+| 35 | `0xa96d2f777061…` | [view](https://testnet.arcscan.app/tx/0xa96d2f7770616652dbf61195712b0c444e7c8a2aa572cf7695fb020e856e6982) | 4711 |
+| 36 | `0xf25a0252cb4b…` | [view](https://testnet.arcscan.app/tx/0xf25a0252cb4b39e08e5b05e54b1abad484ad546159a22d3865f36d976c501aa3) | 4549 |
+| 37 | `0xb45626bbf278…` | [view](https://testnet.arcscan.app/tx/0xb45626bbf2786a5f99592057b5a1465a27bdf54e8246971c7d87b58ccb9852e0) | 4589 |
+| 38 | `0xbfda0cba51b1…` | [view](https://testnet.arcscan.app/tx/0xbfda0cba51b1800038955f5fd964612c5f070a49ff50d45124ca61d955e2990e) | 4596 |
+| 39 | `0xf7b6db9b569b…` | [view](https://testnet.arcscan.app/tx/0xf7b6db9b569b16305ec75d9f7294175acba83cfff42e8bab87b834136d8fed5b) | 5028 |
+| 40 | `0x7a21d658f75e…` | [view](https://testnet.arcscan.app/tx/0x7a21d658f75ed973771d835d0ad577b476e2f1fef641ab78623be427007c35da) | 4763 |
+| 41 | `0x60d8cccf9b40…` | [view](https://testnet.arcscan.app/tx/0x60d8cccf9b409a415f7b81498655a485a1bae8de0849325411029bf90ffb2bad) | 4921 |
+| 42 | `0xcd53a855ba5e…` | [view](https://testnet.arcscan.app/tx/0xcd53a855ba5e2664be5df8499502618cf2e2f21b6e9954f7a8cc5f56def3dbd4) | 4763 |
+| 43 | `0xfb6f11a2cee2…` | [view](https://testnet.arcscan.app/tx/0xfb6f11a2cee2faeff3e706a615aee71cab05c8e8cf29e9d427255881343fea7c) | 4593 |
+| 44 | `0x0af3f3bd7a7b…` | [view](https://testnet.arcscan.app/tx/0x0af3f3bd7a7b650f9e4ab35da047dda4a4fc0d140976e4ba3b463c6c65c4ea8e) | 4615 |
+| 45 | `0x9eac3c670d8c…` | [view](https://testnet.arcscan.app/tx/0x9eac3c670d8c0adf8f119cbe6def4639151b680490dfb9d8641af864b5e6ddf0) | 4893 |
+| 46 | `0xe2477086fc46…` | [view](https://testnet.arcscan.app/tx/0xe2477086fc46eca1459ab1bcac281f3a59ac2575c97a429230a23c7af60db7d1) | 4818 |
+| 47 | `0x324b551197b4…` | [view](https://testnet.arcscan.app/tx/0x324b551197b4125c3947a38edbba7c5c9e27f71a7f2490be0d9b8f84cdf9c6c7) | 5058 |
+| 48 | `0xe446f15365d9…` | [view](https://testnet.arcscan.app/tx/0xe446f15365d93d5429efe7ef5fe8230ef0e24ec475e45af1cbaa0c1eb5c00cb3) | 4889 |
+| 49 | `0x4188e41b2f4c…` | [view](https://testnet.arcscan.app/tx/0x4188e41b2f4ca95e19866946bbc5762862e5a153c5c586d284021345a65c4f1b) | 4584 |
+| 50 | `0xecadae25dcab…` | [view](https://testnet.arcscan.app/tx/0xecadae25dcab6defdb26663827c026a1614e5aba8638652e976ebd5b2eb7d67f) | 4728 |
