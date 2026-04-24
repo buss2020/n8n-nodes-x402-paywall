@@ -38,6 +38,7 @@ export class X402Paywall implements INodeType {
 			{
 				name: 'default',
 				httpMethod: '={{$parameter["httpMethod"]}}',
+				isFullPath: true,
 				responseMode: '={{$parameter["responseMode"]}}',
 				path: '={{$parameter["path"]}}',
 			},
